@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="/img/site_icon.png" type="image/x-icon">
+    <title>Portfolio page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/script.js"></script>
+</head>
+
+<body>
+    <nav id="nav">
+        <ul>
+            <li><a color="#070707" href="#home">Home</a></li>
+            <li><a href="#about-me">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#api">API</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="home" class="home-block" >
+            <div class="name-block">
+                <p class="name">Pavel<br>Nestiurkin</p>
+                <p class="name-disc">Junior Front-end Developer<br>19 years old, Innopolis</p>
+                <p class="lang-switcher"><a href="#" title="Sorry but this feature is not available yet.">RU</a> | ENG
+                </p>
+            </div>
+            <img id="my_photo" src="./img/my_photo.jpg" alt="me sitting and smiling">
+        </div>
+        <div id="about-me" class="about_me-block">
+            <div class="am-box">
+                <h3>About me</h3>
+                <p>Hi, I'm Pasha – frontend developer from Innopolis.
+                    <br>I am interested in creating non-trivial websites and everything connected with it.
+                </p>
+                <p>I'm studying "Front-end Web Development" course <br>at Innopolis University.
+                </p>
+                <p>Ready to implement excellent projects<br>
+                    with wonderful people.</p>
+            </div>
+        </div>
+        <div id="skills" class="skills-block">
+            <h3>Skills</h3>
+            <p>I am mastering technologies and programs such as</p>
+            <div class="skill-cards">
+                <span>
+                    <img src="/img/html.png" alt="html logo">
+                    <div class="stars">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star_empty.png" alt="">
+                        <img src="/img/star_empty.png" alt="">
+                    </div>
+                </span>
+                <span>
+                    <img src="/img/css.png" alt="css logo">
+                    <div class="stars">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star_empty.png" alt="">
+                        <img src="/img/star_empty.png" alt="">
+                    </div>
+                </span>
+                <span><img src="/img/javascript.png" alt="JS logo">
+                    <div class="stars">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star_empty.png" alt="">
+                        <img src="/img/star_empty.png" alt="">
+                    </div>
+                </span>
+                <span>
+                    <img src="/img/figma.png" alt="figma logo">
+                    <div class="stars">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star-dark.png" alt="">
+                        <img src="/img/star_empty.png" alt="">
+                        <img src="/img/star_empty.png" alt="">
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="api" id="api">
+            <h3>In case you get bored...</h3>
+            <p>I really love dogs, so I decided to put random dog photos to make you laugh or smile at least!</p>
+            <img class="dog" alt="random dog photo">
+            <p class="ip">Your IP is </p>
+        </div>
+        <div id="contacts" class="contacts-block">
+            <h3>
+                Contacts
+            </h3>
+            <p>
+                Want to know more or just chat?<br>You are welcome!
+            </p>
+            <a href="mailto:p.nestiurkin@innopolis.university"><button>Send message</button></a>
+            <div class="social_networks-block">
+                <a href="https://vk.com/iampashok69" target="_blank"><img class="icon" src="/img/vkontakte.png"
+                        alt="vkontakte"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img class="icon" src="/img/linkedin.png"
+                        alt="linkedin"></a>
+                <a href="https://www.instagram.com/iampashok" target="_blank"><img class="icon" src="/img/instagram.png"
+                        alt="instagram"></a>
+                <a href="https://t.me/whoevertf" target="_blank"><img class="icon" src="/img/telegram.png"
+                        alt="telegram"></a>
+            </div>
+            <p class="pale">Like me on<br>
+                VK, LinkedIn, Instagram, Telegram</p>
+        </div>
+    </main>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#nav").on("click", "a", function (event) {
+            event.preventDefault();
+            var id = $(this).attr('href'),
+                top = $(id).offset().top;
+            $('body,html').animate({ scrollTop: top }, 500);
+        });
+    });
+</script>
+<script>
+    window.counter = function () {
+        var span = this.querySelector('span');
+        var current = parseInt(span.textContent);
+
+        span.textContent = current + 1;
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+        ScrollTrigger.init();
+    });
+</script>
+
+</html>
